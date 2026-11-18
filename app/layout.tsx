@@ -4,6 +4,7 @@ import "./globals.css";
 import { SmoothScroll } from "@/components/providers/SmoothScroll";
 import { site } from "@/content/site";
 import { descripcionSitio as descripcion } from "@/lib/json-ld";
+import { Analytics } from "@vercel/analytics/next";
 
 const anton = localFont({
   src: "./fonts/Anton-Regular.woff2",
@@ -47,6 +48,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="es-AR" className={`${anton.variable} ${dmSans.variable} antialiased`}>
       <body className="min-h-dvh bg-carbon text-masa">
         <SmoothScroll>{children}</SmoothScroll>
+        <Analytics />
       </body>
     </html>
   );
