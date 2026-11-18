@@ -1,0 +1,324 @@
+@import "tailwindcss";
+
+/*
+ * Costra Pizza: tokens de marca (fuente: brand/tokens/tokens.css).
+ * Se anula la paleta por defecto de Tailwind: solo existen los colores de marca.
+ * Usá siempre las clases por nombre (bg-carbon, text-masa, ...), nunca hex sueltos.
+ */
+@theme {
+  --color-*: initial;
+  --color-carbon: #120e0b;
+  --color-hollin: #1f1813;
+  --color-brasa: #f0561d;
+  --color-brasa-oscura: #c23a0a;
+  --color-mostaza: #f5b82e;
+  --color-albahaca: #1e5a32;
+  --color-masa: #f3e8d3;
+  --color-hueso: #fbf6ec;
+  --color-apagado-oscuro: #b9ab98;
+  --color-apagado-claro: #5e5144;
+
+  --font-*: initial;
+  --font-display: var(--font-anton), "Impact", sans-serif;
+  --font-texto: var(--font-dm-sans), system-ui, sans-serif;
+
+  /* Radios de marca: 6px, 14px y píldora (rounded-full) */
+  --radius-chico: 6px;
+  --radius-medio: 14px;
+
+  --container-contenido: 1120px;
+
+  --ease-salida: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  html {
+    overflow-x: clip;
+    background-color: var(--color-carbon);
+    color: var(--color-masa);
+    -webkit-tap-highlight-color: transparent;
+    scrollbar-color: var(--color-apagado-claro) var(--color-carbon);
+  }
+
+  body {
+    font-family: var(--font-texto);
+    font-size: 17px;
+    line-height: 1.55;
+    background-color: var(--color-carbon);
+    color: var(--color-masa);
+    text-rendering: optimizeLegibility;
+    overflow-x: clip;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 0.95;
+    letter-spacing: 0.01em;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background-color: var(--color-mostaza);
+    color: var(--color-carbon);
+  }
+
+  /* Foco visible: anillo mostaza 3px */
+  :focus-visible {
+    outline: 3px solid var(--color-mostaza);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  [id] {
+    scroll-margin-top: 72px;
+  }
+}
+
+@layer components {
+  .etiqueta {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    white-space: nowrap;
+    border-radius: 999px;
+    border: 2px solid transparent;
+    padding: 14px 18px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.2;
+    /* Hover: el color nuevo "llena" el botón de izquierda a derecha (capa ::before) y el botón se
+       inclina apenas, como los stickers de la marca. --relleno y --tinta cambian por variante. */
+    --relleno: var(--color-mostaza);
+    --tinta: var(--color-carbon);
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    transition:
+      color 0.3s var(--ease-salida),
+      border-color 0.3s var(--ease-salida),
+      rotate 0.35s var(--ease-salida),
+      scale 0.12s ease;
+  }
+  .btn::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    z-index: -1;
+    border-radius: inherit;
+    background-color: var(--relleno);
+    transform: scaleX(0);
+    transform-origin: right center;
+    transition: transform 0.45s var(--ease-salida);
+  }
+  .btn svg {
+    transition: rotate 0.35s var(--ease-salida);
+  }
+  @media (min-width: 640px) {
+    .btn {
+      padding-inline: 26px;
+    }
+  }
+  .btn:active {
+    scale: 0.97;
+  }
+  .btn-primario {
+    background-color: var(--color-brasa);
+    color: var(--color-carbon);
+  }
+  .btn-secundario {
+    border-color: var(--color-masa);
+    color: var(--color-masa);
+    --relleno: var(--color-masa);
+  }
+  @media (hover: hover) {
+    .btn:not(:disabled):hover {
+      color: var(--tinta) !important;
+      border-color: var(--relleno);
+      rotate: -1.5deg;
+    }
+    .btn:not(:disabled):hover::before {
+      transform: scaleX(1);
+      transform-origin: left center;
+    }
+    .btn:not(:disabled):hover svg {
+      rotate: -10deg;
+    }
+    /* Los de ancho completo no se inclinan: en un botón largo el giro se nota de más */
+    .btn.w-full:not(:disabled):hover {
+      rotate: 0deg;
+    }
+  }
+  .btn:focus-visible::before {
+    transform: scaleX(1);
+    transform-origin: left center;
+  }
+  .btn:focus-visible {
+    color: var(--tinta) !important;
+  }
+
+  .link-quieto {
+    color: var(--color-mostaza);
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 6px;
+  }
+
+  /* Link secundario de pedido (pizarra y combos): misma forma en todo el sitio */
+  .link-pedido {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    gap: 4px;
+    font-size: 15px;
+    font-weight: 700;
+    white-space: nowrap;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+    transition: color 0.18s ease;
+  }
+
+  .sticker {
+    display: inline-block;
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    line-height: 1;
+    padding: 8px 16px;
+    border-radius: 6px;
+  }
+}
+
+/* Entrada del hero en CSS: corre antes de hidratar, sin parpadeo ni salto de layout */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-letra {
+    animation: letra-sube 0.9s var(--ease-salida) both;
+  }
+  .hero-entra {
+    animation: entra 0.8s var(--ease-salida) both;
+  }
+  /* La porción cae girando sobre el título, después de las letras */
+  .hero-pizza {
+    animation: pizza-entra 1.15s var(--ease-salida) 420ms both;
+  }
+}
+@keyframes pizza-entra {
+  from {
+    opacity: 0;
+    scale: 0.55;
+    translate: 0 -22%;
+    rotate: -75deg;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+    translate: 0 0;
+    rotate: -14deg;
+  }
+}
+@keyframes letra-sube {
+  from {
+    translate: 0 105%;
+  }
+  to {
+    translate: 0 0;
+  }
+}
+@keyframes entra {
+  from {
+    opacity: 0;
+    translate: 0 18px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+/* En móvil el botón fijo de WhatsApp ocupa el borde inferior: los saltos de ancla no quedan debajo */
+@media (max-width: 1023px) {
+  html {
+    scroll-padding-bottom: 96px;
+  }
+}
+
+/* Pedido: saltito del botón de la barra y entrada del panel */
+@keyframes rebote {
+  0% {
+    scale: 1;
+  }
+  35% {
+    scale: 1.18;
+  }
+  100% {
+    scale: 1;
+  }
+}
+@keyframes panel-entra {
+  from {
+    translate: 100% 0;
+  }
+  to {
+    translate: 0 0;
+  }
+}
+@keyframes hoja-entra {
+  from {
+    translate: 0 100%;
+  }
+  to {
+    translate: 0 0;
+  }
+}
+
+/* Lenis (solo se activa en escritorio y sin reduced motion) */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis:not(.lenis-autoToggle).lenis-stopped {
+  overflow: clip;
+}
+.lenis [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+/* Cursor propio: solo cuando el componente lo activa (puntero fino) */
+/* El panel del pedido es un <dialog> modal: el navegador lo pinta en una capa por encima de todo,
+   incluido el cursor propio. Ahí adentro vuelve el cursor del sistema. */
+html.cursor-propio dialog[open],
+html.cursor-propio dialog[open] * {
+  cursor: auto !important;
+}
+html.cursor-propio dialog[open] :is(button, a, label[for]) {
+  cursor: pointer !important;
+}
+
+html.cursor-propio,
+html.cursor-propio * {
+  cursor: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

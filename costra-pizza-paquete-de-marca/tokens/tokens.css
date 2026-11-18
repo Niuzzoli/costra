@@ -1,0 +1,28 @@
+/* Costra Pizza — tokens de marca. Usar los nombres, nunca valores sueltos. */
+@font-face{font-family:"Anton";src:url("../fuentes/Anton-Regular.ttf") format("truetype");font-weight:400;font-display:swap}
+@font-face{font-family:"DM Sans";src:url("../fuentes/DMSans-Variable.ttf") format("truetype");font-weight:100 1000;font-display:swap}
+
+:root{
+  /* Color */
+  --carbon:#120E0B;      /* fondo principal oscuro */
+  --hollin:#1F1813;      /* superficie elevada sobre carbón */
+  --brasa:#F0561D;       /* primario: botón principal, acentos. Texto encima: carbón */
+  --brasa-oscura:#C23A0A;/* texto de acento sobre fondos claros (4.99:1 sobre hueso) */
+  --mostaza:#F5B82E;     /* acento: stickers, cintas, hover, foco */
+  --albahaca:#1E5A32;    /* secundario: etiquetas, estados OK. Texto encima: hueso */
+  --masa:#F3E8D3;        /* papel / texto sobre carbón */
+  --hueso:#FBF6EC;       /* fondo claro, titulares sobre carbón */
+  --apagado-oscuro:#B9AB98; /* texto secundario sobre carbón / hollín */
+  --apagado-claro:#5E5144;  /* texto secundario sobre masa / hueso */
+
+  /* Tipografía */
+  --fuente-display:"Anton","Impact",sans-serif;
+  --fuente-texto:"DM Sans",system-ui,sans-serif;
+
+  /* Forma */
+  --radio-s:6px; --radio-m:14px; --radio-pildora:999px;
+
+  /* Espacio (base 4/8) */
+  --e-1:4px; --e-2:8px; --e-3:16px; --e-4:24px; --e-5:40px; --e-6:64px; --e-7:88px;
+  --ancho-contenido:1120px;
+}

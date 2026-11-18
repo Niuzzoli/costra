@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Costra Pizza — Identidad visual web</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --carbon:#120E0B; --hollin:#1F1813; --brasa:#F0561D; --brasa-d:#C23A0A;
+  --mostaza:#F5B82E; --albahaca:#1E5A32; --masa:#F3E8D3; --hueso:#FBF6EC;
+  --muted-d:#B9AB98; --muted-l:#5E5144;
+  --display:"Anton","Impact",sans-serif; --body:"DM Sans",system-ui,sans-serif;
+  --r-s:6px; --r-m:14px; --r-pill:999px;
+}
+*{box-sizing:border-box;margin:0}
+body{font-family:var(--body);background:var(--hueso);color:var(--carbon);font-size:17px;line-height:1.55}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-transform:uppercase;letter-spacing:.01em;line-height:.95}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+section{padding:88px 0}
+.dark{background:var(--carbon);color:var(--masa)}
+.cream{background:var(--masa)}
+.eyebrow{font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--brasa-d);margin-bottom:14px}
+.dark .eyebrow{color:var(--mostaza)}
+h2{font-size:clamp(40px,6vw,72px);margin-bottom:22px}
+.lead{max-width:62ch;font-size:19px}
+.muted{color:var(--muted-l)} .dark .muted{color:var(--muted-d)}
+
+/* hero */
+.hero{padding:0;min-height:88vh;display:flex;align-items:flex-end;position:relative;overflow:hidden;
+  background:radial-gradient(900px 500px at 78% 30%,rgba(240,86,29,.30),transparent 60%),radial-gradient(700px 420px at 15% 90%,rgba(245,184,46,.14),transparent 60%),var(--carbon)}
+.hero .wrap{padding-bottom:64px;padding-top:40px;width:100%}
+.hero .tag{display:inline-block;background:var(--mostaza);color:var(--carbon);font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;padding:8px 14px;border-radius:var(--r-pill);margin-bottom:26px;transform:rotate(-2deg)}
+.hero h1{font-size:clamp(84px,17vw,230px);color:var(--hueso);margin-bottom:18px}
+.hero h1 span{color:var(--brasa)}
+.hero p{max-width:52ch;font-size:20px;color:var(--masa)}
+.slot{position:absolute;top:36px;right:28px;width:104px;height:104px;border-radius:50%;background:var(--hueso);color:var(--carbon);padding:14px}
+.logos{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:16px;margin-top:32px}
+.lg{border-radius:var(--r-m);aspect-ratio:1;display:grid;place-items:center;padding:26px;border:1px solid rgba(18,14,11,.12)}
+.lg svg{width:100%;height:100%}
+.lgc{text-align:center;font-size:13px;margin-top:8px;font-weight:700}
+
+/* palette */
+.sw-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:36px}
+.sw{border-radius:var(--r-m);overflow:hidden;border:1px solid rgba(18,14,11,.12);background:#fff}
+.sw .chip{height:120px;display:flex;align-items:flex-end;padding:12px;font-family:var(--display);font-size:26px;text-transform:uppercase}
+.sw .meta{padding:14px;font-size:14px}
+.sw .meta b{display:block;font-size:15px}
+.sw code{font-size:13px;background:var(--masa);padding:1px 6px;border-radius:4px}
+.ratio{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-top:28px}
+.pair{border-radius:var(--r-m);padding:18px;display:flex;justify-content:space-between;align-items:center;font-weight:700}
+.pair small{font-weight:500;opacity:.9}
+.bar{display:flex;height:64px;border-radius:var(--r-m);overflow:hidden;margin-top:28px}
+.bar div{display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+
+/* type */
+.type-row{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:36px}
+@media(max-width:760px){.type-row{grid-template-columns:1fr}}
+.spec{border-top:2px solid var(--carbon);padding-top:18px}
+.spec .big{font-size:clamp(56px,9vw,112px);color:var(--brasa-d)}
+.scale p{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-bottom:1px solid rgba(18,14,11,.14);padding:10px 0}
+.scale small{font-size:12px;color:var(--muted-l);white-space:nowrap}
+
+/* components */
+.comp{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:36px}
+.panel{background:var(--hollin);border-radius:var(--r-m);padding:28px;border:1px solid rgba(243,232,211,.1)}
+.panel h3{font-size:22px;color:var(--mostaza);margin-bottom:18px}
+.btn{font-family:var(--body);font-weight:700;font-size:16px;border:2px solid transparent;border-radius:var(--r-pill);padding:14px 26px;cursor:pointer;transition:transform .15s,background .15s;display:inline-block;text-decoration:none}
+.btn:active{transform:translateY(1px)}
+.btn:focus-visible{outline:3px solid var(--mostaza);outline-offset:3px}
+.btn-p{background:var(--brasa);color:var(--carbon)} .btn-p:hover{background:var(--mostaza)}
+.btn-s{background:transparent;color:var(--masa);border-color:var(--masa)} .btn-s:hover{background:var(--masa);color:var(--carbon)}
+.btn-q{background:transparent;color:var(--mostaza);padding-left:0;padding-right:0;border-radius:0;border-bottom:2px solid var(--mostaza)}
+.btn[disabled]{opacity:.4;cursor:not-allowed}
+.row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.sticker{display:inline-block;font-family:var(--display);text-transform:uppercase;font-size:20px;padding:8px 16px;border-radius:var(--r-s);background:var(--mostaza);color:var(--carbon);transform:rotate(-3deg)}
+.sticker.g{background:var(--albahaca);color:var(--hueso);transform:rotate(2deg)}
+.sticker.o{background:var(--brasa);transform:rotate(-1deg)}
+.slice{background:var(--masa);color:var(--carbon);border-radius:var(--r-m);overflow:hidden}
+.slice .ph{height:150px;background:
+ radial-gradient(circle at 50% 60%,#e9a23b 0 22%,transparent 23%),
+ linear-gradient(160deg,#3a2415,#120E0B);display:grid;place-items:end start;padding:12px;font-size:12px;color:var(--muted-d);font-weight:500}
+.slice .bd{padding:16px 18px 20px}
+.slice h4{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:28px;line-height:1}
+.slice .pr{font-family:var(--display);font-size:26px;color:var(--brasa-d)}
+.hours{display:grid;gap:8px;font-size:15px}
+.hours div{display:flex;justify-content:space-between;border-bottom:1px dashed rgba(243,232,211,.25);padding-bottom:8px}
+.field{width:100%;background:var(--carbon);color:var(--masa);border:2px solid rgba(243,232,211,.3);border-radius:var(--r-s);padding:13px 14px;font:inherit;margin-top:8px}
+.field:focus{outline:none;border-color:var(--mostaza)}
+
+/* web mock */
+.mock{margin-top:36px;border-radius:18px;overflow:hidden;border:1px solid rgba(243,232,211,.15);background:var(--carbon)}
+.mock nav{display:flex;justify-content:space-between;align-items:center;padding:18px 28px;border-bottom:1px solid rgba(243,232,211,.12)}
+.mock nav b{font-family:var(--display);font-weight:400;font-size:28px;letter-spacing:.04em;color:var(--hueso)}
+.mock nav span{font-size:14px;color:var(--muted-d);margin-left:22px}
+.mock .h{padding:56px 28px 48px;background:radial-gradient(500px 260px at 80% 40%,rgba(240,86,29,.35),transparent 65%)}
+.mock .h h3{font-size:clamp(44px,8vw,96px);color:var(--hueso)}
+.mock .h h3 em{font-style:normal;color:var(--brasa)}
+.mock .h p{margin:14px 0 24px;max-width:44ch;color:var(--masa)}
+.mock .strip{background:var(--mostaza);color:var(--carbon);font-family:var(--display);text-transform:uppercase;font-size:20px;padding:10px 0;white-space:nowrap;overflow:hidden;letter-spacing:.04em}
+
+/* voice / rules */
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:32px}
+.card{background:var(--hueso);border-radius:var(--r-m);padding:24px;border:1px solid rgba(18,14,11,.12)}
+.card h3{font-size:24px;margin-bottom:12px}
+.card ul{padding-left:18px} .card li{margin:6px 0}
+.say{font-family:var(--display);font-size:30px;text-transform:uppercase;line-height:1.05;margin:8px 0;color:var(--brasa-d)}
+footer{padding:48px 0;font-size:14px}
+code.t{font-size:13px;background:rgba(243,232,211,.12);padding:2px 7px;border-radius:4px;color:var(--mostaza)}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="gato" viewBox="22.25 29.00 94.75 94.75"><path fill="currentColor" fill-rule="evenodd" d="M44.58,35.45 L44.05,35.92 L43.52,36.51 L43.01,37.21 L42.50,38.03 L42.00,38.97 L41.55,39.98 L41.16,41.05 L40.83,42.20 L40.55,43.42 L40.30,44.77 L40.08,46.26 L39.89,47.88 L39.73,49.62 L39.65,51.17 L39.63,52.52 L39.69,53.66 L39.81,54.59 L39.96,55.39 L40.13,56.05 L40.33,56.56 L40.55,56.94 L40.80,57.30 L41.10,57.66 L41.44,58.02 L41.81,58.36 L42.23,58.69 L42.70,59.00 L43.22,59.30 L43.78,59.58 L44.23,59.84 L44.58,60.07 L44.81,60.28 L44.94,60.47 L45.02,60.66 L45.07,60.87 L45.08,61.08 L45.05,61.30 L44.91,61.54 L44.68,61.80 L44.34,62.09 L43.91,62.41 L43.51,62.73 L43.15,63.05 L42.83,63.39 L42.55,63.73 L42.33,64.10 L42.17,64.49 L42.08,64.91 L42.05,65.34 L42.04,65.73 L42.05,66.08 L42.09,66.38 L42.16,66.62 L42.27,66.92 L42.42,67.27 L42.62,67.66 L42.88,68.09 L43.33,68.66 L43.98,69.34 L44.84,70.16 L45.91,71.09 L46.79,71.97 L47.49,72.78 L48.02,73.53 L48.36,74.22 L48.62,74.87 L48.81,75.48 L48.92,76.05 L48.95,76.58 L48.92,77.41 L48.83,78.55 L48.67,80.00 L48.45,81.75 L48.30,83.45 L48.20,85.11 L48.17,86.72 L48.20,88.28 L48.36,89.93 L48.64,91.66 L49.05,93.48 L49.58,95.39 L49.98,97.12 L50.24,98.66 L50.38,100.03 L50.38,101.22 L50.48,102.36 L50.70,103.45 L51.03,104.50 L51.47,105.50 L52.04,106.55 L52.74,107.64 L53.58,108.78 L54.55,109.97 L55.49,111.05 L56.41,112.04 L57.31,112.92 L58.19,113.70 L59.11,114.45 L60.08,115.17 L61.09,115.86 L62.16,116.52 L63.17,117.08 L64.14,117.55 L65.06,117.92 L65.94,118.20 L66.79,118.41 L67.62,118.55 L68.42,118.62 L69.20,118.62 L70.00,118.52 L70.81,118.30 L71.64,117.97 L72.48,117.53 L73.21,117.20 L73.82,116.96 L74.31,116.83 L74.69,116.80 L75.05,116.84 L75.41,116.95 L75.77,117.12 L76.11,117.38 L76.49,117.62 L76.91,117.85 L77.38,118.08 L77.88,118.30 L78.43,118.47 L79.04,118.59 L79.70,118.67 L80.42,118.70 L81.12,118.66 L81.81,118.53 L82.48,118.33 L83.14,118.05 L83.82,117.66 L84.52,117.16 L85.25,116.55 L86.00,115.83 L86.64,115.26 L87.17,114.84 L87.59,114.56 L87.91,114.44 L88.27,114.38 L88.67,114.38 L89.12,114.44 L89.62,114.56 L90.20,114.77 L90.84,115.07 L91.55,115.45 L92.33,115.92 L93.00,116.28 L93.56,116.53 L94.02,116.67 L94.36,116.70 L94.70,116.70 L95.05,116.65 L95.39,116.56 L95.73,116.44 L96.06,116.30 L96.38,116.14 L96.67,115.97 L96.95,115.78 L97.24,115.54 L97.54,115.24 L97.84,114.89 L98.16,114.48 L98.45,114.05 L98.71,113.60 L98.95,113.12 L99.17,112.62 L99.35,112.12 L99.49,111.62 L99.59,111.12 L99.66,110.62 L99.69,109.91 L99.69,108.99 L99.66,107.86 L99.59,106.52 L99.45,104.96 L99.21,103.20 L98.89,101.22 L98.48,99.03 L98.16,96.76 L97.93,94.40 L97.78,91.95 L97.72,89.42 L97.72,86.79 L97.78,84.05 L97.91,81.22 L98.09,78.28 L98.20,75.70 L98.21,73.46 L98.14,71.58 L97.98,70.05 L97.79,68.66 L97.55,67.43 L97.28,66.34 L96.97,65.41 L96.75,64.50 L96.62,63.62 L96.59,62.78 L96.66,61.97 L96.69,61.08 L96.69,60.11 L96.66,59.06 L96.59,57.94 L96.50,57.05 L96.38,56.41 L96.22,56.02 L96.03,55.86 L95.85,55.74 L95.68,55.66 L95.52,55.62 L95.36,55.62 L95.03,55.77 L94.53,56.05 L93.86,56.47 L93.02,57.03 L92.32,57.46 L91.77,57.76 L91.38,57.92 L91.12,57.95 L90.85,57.92 L90.55,57.83 L90.23,57.67 L89.89,57.45 L89.40,57.22 L88.76,56.97 L87.97,56.70 L87.03,56.42 L86.19,56.20 L85.44,56.02 L84.78,55.91 L84.22,55.84 L83.54,55.80 L82.74,55.79 L81.83,55.80 L80.80,55.83 L79.88,55.69 L79.09,55.38 L78.41,54.89 L77.84,54.23 L77.33,53.68 L76.86,53.23 L76.44,52.88 L76.06,52.62 L75.70,52.45 L75.36,52.34 L75.03,52.30 L74.72,52.33 L74.43,52.40 L74.16,52.51 L73.92,52.66 L73.70,52.84 L73.30,53.44 L72.70,54.44 L71.92,55.84 L70.95,57.66 L70.02,59.20 L69.11,60.48 L68.23,61.50 L67.39,62.25 L66.63,62.95 L65.96,63.61 L65.38,64.22 L64.88,64.78 L64.33,65.45 L63.73,66.21 L63.09,67.08 L62.41,68.05 L61.71,69.09 L61.01,70.22 L60.30,71.42 L59.58,72.70 L58.88,74.01 L58.21,75.34 L57.56,76.69 L56.94,78.06 L56.43,79.12 L56.04,79.88 L55.77,80.31 L55.61,80.44 L55.46,80.49 L55.32,80.48 L55.19,80.39 L55.06,80.23 L55.01,79.79 L55.02,79.05 L55.11,78.03 L55.27,76.72 L55.38,75.57 L55.46,74.59 L55.50,73.77 L55.50,73.11 L55.47,72.50 L55.41,71.94 L55.31,71.42 L55.19,70.95 L54.99,70.48 L54.73,69.99 L54.39,69.50 L53.98,69.00 L53.52,68.53 L53.01,68.09 L52.44,67.69 L51.81,67.31 L51.29,66.95 L50.87,66.61 L50.55,66.28 L50.33,65.97 L50.18,65.66 L50.10,65.37 L50.09,65.08 L50.16,64.80 L50.37,64.40 L50.73,63.88 L51.23,63.25 L51.89,62.50 L52.43,61.84 L52.85,61.26 L53.16,60.77 L53.34,60.36 L53.48,60.00 L53.55,59.69 L53.58,59.42 L53.55,59.20 L53.45,58.95 L53.30,58.65 L53.08,58.31 L52.80,57.94 L52.41,57.56 L51.93,57.19 L51.34,56.81 L50.66,56.44 L50.07,56.04 L49.59,55.62 L49.20,55.17 L48.92,54.70 L48.74,54.15 L48.66,53.51 L48.69,52.78 L48.81,51.97 L49.14,50.76 L49.67,49.15 L50.41,47.14 L51.34,44.73 L52.05,42.70 L52.54,41.05 L52.80,39.77 L52.83,38.86 L52.80,38.06 L52.70,37.38 L52.55,36.80 L52.33,36.33 L52.06,35.89 L51.75,35.48 L51.39,35.11 L50.98,34.77 L50.52,34.49 L50.01,34.29 L49.44,34.16 L48.81,34.09 L48.27,34.05 L47.80,34.04 L47.41,34.05 L47.09,34.08 L46.78,34.14 L46.47,34.23 L46.16,34.36 L45.84,34.52 L45.48,34.75 L45.05,35.06Z M87.23,68.81 L87.39,68.69 L87.61,68.65 L87.89,68.70 L88.23,68.83 L88.64,69.05 L89.02,69.17 L89.38,69.20 L89.72,69.14 L90.03,68.98 L90.42,68.88 L90.89,68.84 L91.44,68.84 L92.06,68.91 L92.57,68.98 L92.96,69.05 L93.23,69.14 L93.39,69.23 L93.52,69.35 L93.61,69.49 L93.67,69.66 L93.70,69.84 L93.68,70.04 L93.60,70.24 L93.47,70.45 L93.28,70.67 L93.06,70.88 L92.81,71.09 L92.53,71.28 L92.22,71.47 L91.84,71.62 L91.38,71.73 L90.86,71.80 L90.27,71.83 L89.77,71.83 L89.36,71.80 L89.05,71.73 L88.83,71.64 L88.58,71.48 L88.30,71.24 L87.98,70.94 L87.64,70.56 L87.38,70.22 L87.19,69.91 L87.08,69.62 L87.05,69.38 L87.06,69.16 L87.12,68.97Z M74.14,68.14 L74.48,67.98 L74.86,67.93 L75.27,67.98 L75.70,68.12 L76.17,68.38 L76.60,68.51 L76.99,68.52 L77.34,68.42 L77.66,68.20 L78.02,68.04 L78.42,67.93 L78.88,67.88 L79.38,67.88 L79.80,67.90 L80.14,67.95 L80.41,68.02 L80.59,68.11 L80.74,68.23 L80.85,68.39 L80.92,68.58 L80.95,68.80 L80.88,69.07 L80.71,69.40 L80.44,69.78 L80.06,70.22 L79.62,70.58 L79.12,70.86 L78.56,71.06 L77.94,71.19 L77.34,71.24 L76.76,71.23 L76.20,71.14 L75.67,70.98 L75.22,70.81 L74.84,70.62 L74.55,70.42 L74.33,70.20 L74.14,69.95 L73.98,69.65 L73.86,69.31 L73.77,68.94 L73.78,68.62 L73.91,68.35Z"/></symbol></svg>
+
+<header class="hero">
+  <div class="slot"><svg viewBox="0 0 100 100" width="100%" height="100%"><use href="#gato"/></svg></div>
+  <div class="wrap">
+    <div class="tag">Pizza tipo New York · por porciones</div>
+    <h1>Cos<span>tra</span></h1>
+    <p>Identidad visual para la web, tomada de cómo Costra ya se ve en Instagram: cocina oscura y cálida, pizza como protagonista, tipografía gigante y humor de barrio. Cipolletti, desde 25 de Mayo 148.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">01 · Concepto</div>
+    <h2>Pizzería de noche,<br>con humor.</h2>
+    <p class="lead">Lo que se repite en el perfil: fondos casi negros con luz de horno, la porción sola en el plato como héroe, títulos enormes y condensados, gráficos de campaña con onda ilustrada (el gato, el fantasma, stickers) y un tono cercano. La web debe sentirse igual: oscura por defecto, cálida, directa y con un toque de travesura.</p>
+    <div class="cols">
+      <div class="card"><h3>Qué se conserva</h3><ul><li>Negro cálido + naranja brasa + mostaza</li><li>Titulares condensados en mayúsculas</li><li>Foto de porción en plano cenital o ¾</li><li>El gato como mascota</li></ul></div>
+      <div class="card"><h3>Qué se suma</h3><ul><li>Un sistema fijo de colores, tamaños y botones</li><li>Modo claro “masa” para menú y legales</li><li>Reglas de contraste accesibles</li></ul></div>
+      <div class="card"><h3>Qué no se toca</h3><ul><li>El logo y el gato oficiales (usar el archivo original)</li><li>Colores de colaboraciones (Ritual, Pizza Break) quedan fuera del sistema</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Logo · el gato</div>
+    <h2>Mascota oficial</h2>
+    <p class="lead">Una sola forma, cuatro usos. Negro sobre claros, masa sobre carbón, y en círculo como el avatar de Instagram. No se redibuja ni se deforma; espacio libre mínimo del 25% y tamaño mínimo de 32px.</p>
+    <div class="logos">
+      <div><div class="lg" style="background:#FBF6EC;color:#120E0B"><svg><use href="#gato"/></svg></div><div class="lgc">Negro sobre hueso</div></div>
+      <div><div class="lg" style="background:#120E0B;color:#F3E8D3"><svg><use href="#gato"/></svg></div><div class="lgc">Masa sobre carbón</div></div>
+      <div><div class="lg" style="background:#F5B82E;color:#120E0B"><svg><use href="#gato"/></svg></div><div class="lgc">Negro sobre mostaza</div></div>
+      <div><div class="lg" style="background:#F0561D;color:#120E0B"><svg><use href="#gato"/></svg></div><div class="lgc">Negro sobre brasa</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cream">
+  <div class="wrap">
+    <div class="eyebrow">02 · Color</div>
+    <h2>Paleta Horno</h2>
+    <p class="lead">Seis colores con rol. Los tonos salen de las fotos del perfil: el negro de la cocina, el naranja de la corteza y la salsa, el amarillo de los stickers y la albahaca del verde de las latas y las hojas.</p>
+    <div class="sw-grid">
+      <div class="sw"><div class="chip" style="background:#120E0B;color:#F3E8D3">Carbón</div><div class="meta"><b>Fondo principal</b><code>#120E0B</code><br>Secciones, hero, footer.</div></div>
+      <div class="sw"><div class="chip" style="background:#1F1813;color:#F3E8D3">Hollín</div><div class="meta"><b>Superficie elevada</b><code>#1F1813</code><br>Tarjetas y paneles sobre carbón.</div></div>
+      <div class="sw"><div class="chip" style="background:#F0561D;color:#120E0B">Brasa</div><div class="meta"><b>Primario</b><code>#F0561D</code><br>Botón principal, acentos de título. Texto encima: carbón.</div></div>
+      <div class="sw"><div class="chip" style="background:#F5B82E;color:#120E0B">Mostaza</div><div class="meta"><b>Acento</b><code>#F5B82E</code><br>Stickers, cintas, hover, foco.</div></div>
+      <div class="sw"><div class="chip" style="background:#1E5A32;color:#FBF6EC">Albahaca</div><div class="meta"><b>Secundario</b><code>#1E5A32</code><br>Etiquetas vegetarianas, estados OK.</div></div>
+      <div class="sw"><div class="chip" style="background:#F3E8D3;color:#120E0B">Masa</div><div class="meta"><b>Papel / modo claro</b><code>#F3E8D3</code><br>Menú, tarjetas claras, texto sobre oscuro.</div></div>
+      <div class="sw"><div class="chip" style="background:#FBF6EC;color:#120E0B">Hueso</div><div class="meta"><b>Fondo claro</b><code>#FBF6EC</code><br>Páginas claras y títulos sobre carbón.</div></div>
+      <div class="sw"><div class="chip" style="background:#C23A0A;color:#FBF6EC">Brasa oscura</div><div class="meta"><b>Texto de acento en claro</b><code>#C23A0A</code><br>Links y precios sobre masa/hueso.</div></div>
+    </div>
+    <div class="bar" aria-label="Proporción de uso">
+      <div style="flex:55;background:#120E0B;color:#F3E8D3">Carbón 55%</div>
+      <div style="flex:15;background:#F3E8D3;color:#120E0B">Masa 15%</div>
+      <div style="flex:15;background:#F0561D;color:#120E0B">Brasa 15%</div>
+      <div style="flex:10;background:#F5B82E;color:#120E0B">Mostaza</div>
+      <div style="flex:5;background:#1E5A32;color:#FBF6EC">Alb.</div>
+    </div>
+    <h3 style="font-size:28px;margin-top:44px">Contraste verificado</h3>
+    <div class="ratio">
+      <div class="pair" style="background:#F0561D;color:#120E0B">Carbón sobre Brasa <small>5.54:1 ✓ texto</small></div>
+      <div class="pair" style="background:#120E0B;color:#F3E8D3">Masa sobre Carbón <small>15.8:1 ✓</small></div>
+      <div class="pair" style="background:#120E0B;color:#F5B82E">Mostaza sobre Carbón <small>10.8:1 ✓</small></div>
+      <div class="pair" style="background:#FBF6EC;color:#C23A0A">Brasa oscura sobre Hueso <small>4.99:1 ✓ texto</small></div>
+      <div class="pair" style="background:#1E5A32;color:#FBF6EC">Hueso sobre Albahaca <small>7.6:1 ✓</small></div>
+      <div class="pair" style="background:#F0561D;color:#FBF6EC;font-size:22px">Hueso sobre Brasa <small>3.22:1 solo ≥24px</small></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">03 · Tipografía</div>
+    <h2>Voz grande,<br>lectura fácil</h2>
+    <p class="lead">Los carteles del perfil usan una condensada pesada en mayúsculas. En web: <b>Anton</b> para titulares y precios, <b>DM Sans</b> para todo lo que se lee. Ambas de Google Fonts, gratuitas.</p>
+    <div class="type-row">
+      <div class="spec"><div class="eyebrow">Display · Anton 400</div><div class="big" style="font-family:var(--display);text-transform:uppercase;line-height:.95">Slice del día</div><p class="muted" style="margin-top:12px">Siempre en mayúsculas, interlineado 0.95, un solo color por título (se permite destacar una palabra en Brasa).</p></div>
+      <div class="spec"><div class="eyebrow">Texto · DM Sans 400 / 500 / 700</div><p style="font-size:22px;font-weight:500">Pizza tipo New York por porciones. Masa fina, borde crocante y mucho queso.</p><p class="muted" style="margin-top:12px">Cuerpo 17–18px, líneas de 60–70 caracteres, peso 700 para botones y etiquetas.</p></div>
+    </div>
+    <div class="scale" style="margin-top:34px">
+      <p><span style="font-family:var(--display);font-size:72px;text-transform:uppercase;line-height:1">H1 Hero</span><small>clamp 72–230px · Anton</small></p>
+      <p><span style="font-family:var(--display);font-size:56px;text-transform:uppercase;line-height:1">H2 Sección</span><small>clamp 40–72px · Anton</small></p>
+      <p><span style="font-family:var(--display);font-size:32px;text-transform:uppercase;line-height:1">H3 Tarjeta</span><small>24–32px · Anton</small></p>
+      <p><span style="font-size:19px">Texto destacado (lead)</span><small>19px · DM Sans 400</small></p>
+      <p><span style="font-size:17px">Texto base</span><small>17px / 1.55 · DM Sans 400</small></p>
+      <p><span style="font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase">Etiqueta</span><small>13px · 700 · +14%</small></p>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap">
+    <div class="eyebrow">04 · Componentes</div>
+    <h2>Piezas del sitio</h2>
+    <div class="comp">
+      <div class="panel"><h3>Botones</h3>
+        <div class="row"><a class="btn btn-p" href="#c">Pedir por WhatsApp</a><a class="btn btn-s" href="#c">Ver menú</a></div>
+        <div class="row" style="margin-top:18px"><a class="btn btn-q" href="#c">Cómo llegar →</a><button class="btn btn-p" disabled>No disponible</button></div>
+        <p class="muted" style="font-size:14px;margin-top:16px">Píldora, 14×26px, peso 700. Foco: anillo mostaza 3px. Hover primario: mostaza.</p></div>
+      <div class="panel"><h3>Stickers</h3>
+        <div class="row"><span class="sticker">Slice especial</span><span class="sticker o">2x1</span><span class="sticker g">Vegetariana</span></div>
+        <p class="muted" style="font-size:14px;margin-top:18px">Anton, leve rotación (−3° a +2°), radio 6px. Máximo 2 por pantalla.</p></div>
+      <div class="panel"><h3>Tarjeta de porción</h3>
+        <div class="slice"><div class="ph">Foto de la porción (cenital, fondo oscuro)</div><div class="bd"><h4>Margherita de la casa</h4><p style="font-size:15px">Salsa, mozzarella, albahaca y parmesano.</p><div class="pr">$ 0.000</div></div></div></div>
+      <div class="panel"><h3>Horarios</h3>
+        <div class="hours"><div><span>Martes a domingo</span><b>11:45 – 16:30</b></div><div><span>Martes a domingo</span><b>20:00 – 23:45</b></div><div><span>Lunes</span><b>Cerrado</b></div></div>
+        <p class="muted" style="font-size:14px;margin-top:14px">25 de Mayo 148, Cipolletti. Horarios según su Instagram; confirmar antes de publicar.</p></div>
+      <div class="panel"><h3>Formulario</h3>
+        <label style="font-size:14px;font-weight:700">Nombre</label><input class="field" placeholder="Tu nombre">
+        <label style="font-size:14px;font-weight:700;display:block;margin-top:14px">Mensaje</label><input class="field" placeholder="Reservas, eventos, consultas">
+        <p class="muted" style="font-size:14px;margin-top:14px">Borde masa 30%, foco mostaza. Radio 6px.</p></div>
+      <div class="panel"><h3>Forma y espacio</h3>
+        <p style="font-size:15px"><code class="t">radius</code> 6px · 14px · pill<br><code class="t">espacio</code> 4 · 8 · 16 · 24 · 40 · 64 · 88px<br><code class="t">ancho</code> contenido 1120px<br><code class="t">sombras</code> ninguna: se separa con color y borde fino</p></div>
+    </div>
+
+    <h3 style="font-size:32px;margin:56px 0 0;color:var(--mostaza)">Vista previa de portada</h3>
+    <div class="mock">
+      <nav><b>COSTRA</b><div><span>Menú</span><span>Horarios</span><span>Dónde</span></div></nav>
+      <div class="h"><span class="sticker">Hoy: slice especial</span><h3 style="margin-top:18px">La porción<br>que <em>volvés</em><br>a pedir</h3><p>Pizza tipo New York por porciones, en Cipolletti. Abrimos de martes a domingo.</p><div class="row"><a class="btn btn-p" href="#c">Pedir por WhatsApp</a><a class="btn btn-s" href="#c">Ver menú</a></div></div>
+      <div class="strip">Slice especial · Combos · 50% en slice abonando en efectivo · Pinta de Crafter · Slice especial · Combos ·</div>
+    </div>
+  </div>
+</section>
+
+<section class="cream">
+  <div class="wrap">
+    <div class="eyebrow">05 · Imagen y voz</div>
+    <h2>Cómo se ve y<br>cómo habla</h2>
+    <div class="cols">
+      <div class="card"><h3>Fotografía</h3><ul><li>Una porción sola sobre plato, fondo oscuro, luz cálida</li><li>Manos y gente comiendo, naturales, nada de stock</li><li>Detalles: rallador, limón, latas, caja</li><li>Sin filtros fríos ni fondos blancos de catálogo</li></ul></div>
+      <div class="card"><h3>Ilustración</h3><ul><li>Mascota gato y personajes de campaña, trazo grueso negro</li><li>Fichas temáticas (Halloween, fantasma) solo en campañas, no en el sistema base</li><li>Íconos: línea simple de 2px</li></ul></div>
+      <div class="card"><h3>Tono</h3><p class="say">¿Dulce o birra?</p><p class="say">Slice fantasma</p><ul><li>Voseo argentino, frases cortas</li><li>Humor liviano, nunca sarcástico con el cliente</li><li>Precio y horario siempre claros, sin juego de palabras</li></ul></div>
+    </div>
+    <div class="cols">
+      <div class="card"><h3>Sí</h3><ul><li>Carbón dominante, un acento por bloque</li><li>Un solo titular enorme por pantalla</li><li>Botón primario único por sección</li></ul></div>
+      <div class="card"><h3>No</h3><ul><li>Degradés violeta/azul ni vidrio esmerilado</li><li>Texto hueso sobre brasa en tamaño chico</li><li>Mezclar la paleta con la de colaboraciones</li><li>Redibujar el logo o el gato</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<footer class="dark"><div class="wrap">
+  <p><b>Siguiente paso:</b> pasar este sistema a la web real (landing con menú, horarios y pedido por WhatsApp).</p>
+  <p class="muted" style="margin-top:8px">El logo es una vectorización automática de un JPG de 150×150 px: sirve para web y redes, no para impresión. Fuente: perfil de Instagram @costra.pizza (revisado el 17/11/2026). Dirección, horarios y contacto tomados de la bio.</p>
+</div></footer>
+
+</body>
+</html>
